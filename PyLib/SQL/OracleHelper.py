@@ -18,7 +18,6 @@ class SQLHelper(IDbHelper):
     '''
     初始化数据库链接
     '''
-
     def init(self, config):
         try:
             self.__connection = cx_Oracle.connect(config['DB_USER'], config['DB_PASS'], config['DB_TNS'])
@@ -28,7 +27,6 @@ class SQLHelper(IDbHelper):
     '''
     获取数据库链接
     '''
-
     def get_connection(self):
         if self.__connection:
             return self.__connection
@@ -39,7 +37,6 @@ class SQLHelper(IDbHelper):
     '''
     关闭数据库链接
     '''
-
     def close_connection(self):
         if self.__connection:
             self.__connection.close()
@@ -47,7 +44,6 @@ class SQLHelper(IDbHelper):
     '''
     执行SQL语句
     '''
-
     def execute(self, sql, param=None):
         try:
             data = None
@@ -62,7 +58,6 @@ class SQLHelper(IDbHelper):
     '''
     创建数据库游标，又来获取数据
     '''
-
     def _NewCursor(self):
         cur = self.__connection.cursor()
         if cur:
@@ -73,7 +68,6 @@ class SQLHelper(IDbHelper):
     '''
     关闭数据库游标
     '''
-
     def _CloseCursor(self, cur):
         if cur:
             cur.close()
