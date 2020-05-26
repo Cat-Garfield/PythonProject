@@ -3,21 +3,17 @@
 简单工厂模式
 '''
 
-
 class Animal(object):
     def GetName(self):
         raise NotImplementedError
-
 
 class Dog(Animal):
     def GetName(self):
         print('Dog')
 
-
 class Cat(Animal):
     def GetName(self):
         print('Cat')
-
 
 class AnimalsFactory(object):
     def CreateAnimal(self, name):
